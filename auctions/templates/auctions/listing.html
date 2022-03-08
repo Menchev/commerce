@@ -1,0 +1,37 @@
+{% extends 'auctions/layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{ listing.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div id="listing" class="row fs-2">
+            {{ listing.title }} 
+        </div>
+        <div id="listing" class="row border border-3 border-info rounded-3">
+            <img id="img_listing_view" src="{{ listing.image }}">
+        </div>
+        <div id="listing" class="row border border-3 border-info rounded-3">
+            Description: {{ listing.description }}
+        </div>
+        <div id="listing" class="row">
+            Category {{ listing.category }}
+        </div>
+        <div id="listing" class="row fs-4">
+            Current bid: {{ bid.amount }}$
+        </div>
+        <form action="{% url 'bid_update' %}" method="post">
+            {% csrf_token %}
+            {{ new_bid_form }}
+            <input type="hidden" name="listing_id" value="{{listing.id}}">
+            <input class="btn btn-primary" type="submit" value="Place Bid">
+        </form>
+        <form action="{% url 'watchlist' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="listing_id" value="{{listing.id}}">
+            <input type="submit" value="Watchlist">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+ 
+{% block body %}
+    <h2>Active Listings:</h2>
+    <div class="container-fluid">
+        {% for listing in listings %}
+        <a href="{% url 'listing' id=listing.id %}">
+            <div id="listing_index" class="row border border-3 border-info rounded-3">
+                <div class="col-6">
+                    <img id="img_index_view" src="{{ listing.image }}">
+                </div>
+                <div class="col-6">
+                    <div>
+                        {{ listing.title }}
+                    </div>
+                    <div>
+                        Description {{ listing.description }}
+                    </div>
+                    <div>
+                        Category: {{ listing.category }}
+                    </div>
+                    {% for bid in bids %}
+                        {% if bid.listing == listing %}
+                                Price: {{ bid.amount}}$
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

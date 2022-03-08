@@ -1,0 +1,22 @@
+body {
+    padding: 10px;
+    background-color: aqua;
+}
+
+#listing {
+    margin: 2px;
+}
+
+#img_index_view {
+    max-width: 100%;
+    height: 400px;
+}
+
+#img_listing_view {
+    max-width: fit-content;
+    height: 400px;
+}
+
+#listing_index {
+    margin-bottom: 5px;
+}
