@@ -1,12 +1,12 @@
 # cs50w-Commerce
-An eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
 
 # cs50W-Network
 Commerce
 
 # CS50 Web Programming with Python and JavaScript
 
-## Project: Commerce
+## Project: Commerce - An eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
+
 
 ### Features:
 - Create a new listing
